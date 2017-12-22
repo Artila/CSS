@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>消除浮动，clear与margin重叠</title>
+</head>
+
+<body>
+    <div>
+        <a href="https://www.imooc.com/code/2778">例子来自</a>
+        <p>两种方法的距离相等，都是100px，但是第一种原本设定的距离是200px。</p>
+        <p>margin的重叠计算公式，正正取大值，正负值相加，负负最负值。</p>
+        <p>用clear清除浮动(在浮动元素的底加入div且设置clear:both;)，会发生margin重叠显现</p>
+        <p>用BFC清除浮动(在浮动元素的父元素上加入overflow: hidden;)，
+            则会把整个元素包起来，从而不会发生margin重叠现象</p>
+    </div>
+    1.
+    <div style="background-color: #f5f5f5;">
+        <img src="http://img.mukewang.com/53d60af3000171a002560191.jpg" style="float:left;">
+        <div style="clear:both; margin-bottom: 100px;">clear:both;margin-bottom: 100px;</div>
+    </div>
+    <!-- 把下面的文字注释后距离仍是100px -->
+    <div style="margin-top: 100px;">本文字离图片的距离是？</div>
+    2.
+    <div style="background-color: #f5f5f5; overflow: hidden;">
+        <img src="http://img.mukewang.com/53d60af3000171a002560191.jpg" style="float:left;">
+    </div>
+    <div style="margin-top: 100px;">本文字离图片的距离是？</div>
+</body>
+
+</html>
