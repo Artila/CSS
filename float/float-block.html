@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浮动与display:block</title>
+    <style>
+        .ovh {
+            overflow: hidden;
+        }
+        .red {
+            color: #cd0000;
+        }
+        [hidden] {
+            display: none
+        }
+    </style>
+</head>
+<body>
+   <p id="first">
+       这是一个没有设置<code>float</code>属性的按钮。
+   </p>
+   <p class="ovh">
+       <input type="button" id="btnShow" value="点击我显示display属性值">
+   </p>
+   <p hidden>
+       此时，按钮的display属性值是：
+       <span id="result" class="red"></span>
+   </p>
+   <p>
+       点击下面的按钮让上面的按钮添加<code>float:left</code>的样式。
+   </p>
+   <p>
+       <input type="button" id="btnAdd" value="上面的按钮添加float:left">
+   </p>
+   <script>
+       var btnShow = document.getElementById("btnShow"),
+           btnAdd = document.getElementById("btnAdd"),
+           result = document.getElementById("result"),
+           first = document.getElementById("first");
+
+        if (btnShow && btnAdd && result) {
+            btnShow.onclick = function() {
+                // 获得该按钮的display值
+                /* 
+                obj.style.display只能获取到内联样式中的属性值, 
+                currentStyle是IE中DOM元素的属性,相当于style, 用法为obj.currentStyle.display;
+                getComputedStyle是chrome,ff等浏览器支持的全局方法, 
+                但IE8及之前版本不支持,用法为getComputedStyle(obj,null)["display"];
+                可以把它们封装起来以便兼容
+                */
+                var dis = this.currentStyle ? this.currentStyle.display : window.getComputedStyle(this, null).display;
+                // 显示结果
+                result.innerHTML = dis;
+                result.parentNode.removeAttribute("hidden");
+                // 消除 IE7/IE8 bug
+                document.body.className = "any";
+            }
+            // 设置浮动按钮的点击事件
+            btnAdd.onclick = function() {
+                btnShow.style["cssFloat" in this.style ? "cssFloat" : "styleFloat"] = "left";
+                // 文字描述的变化
+                btnShow.value = "再次点击我确认display属性值";
+                first.innerHTML = first.innerHTML.replace("没有", "<del>没有</del>");
+                // 结果隐藏，按钮禁用
+                result.parentNode.setAttribute("hidden", "");
+                this.setAttribute("disabled", "");
+            };
+        }
+   </script>
+</body>
+</html>
