@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>absolute的包裹性</title>
+    <style>
+        .box {
+            padding: 10px;
+            background: #f0f0f0;
+        }
+        input {
+            position: absolute;
+            top: 430px;
+            width: 150px;
+            height: 30px;
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        absolute的破坏性是对图片的absolute化。图片设置absolute后，图片就从标准文档流中脱离出来，没有东西可以继续支撑容器的高度，容器自然就坍塌了。好像把房子的柱子挪到房子外边，房子果断就塌了。
+    </p>
+    <p>
+        absolute的包裹性是对容器的absolute化。容器设置absolute后，容器变为了 inline-block，容器本身没有设置宽度和高度的话，那么容器的宽高就等于内容的宽高，表现结果就是容器把内容包裹起来。
+    </p>
+    <div class="box" id="box">
+        <img id="image" src="http://img.mukewang.com/54447b06000171a002560191.jpg" 
+        width="250" height="200">
+    </div>
+    <input type="button" id="btn" value="容器absolute化">
+    <script>
+        var box = document.getElementById('box'),
+            btn = document.getElementById('btn');
+
+        if (box != null && btn != null) {
+            btn.onclick = function() {
+                if (this.absolute) {
+                    box.style.position = '';
+                    this.value = '容器absolute化';
+                    this.absolute = false;
+                } else {
+                    box.style.position = 'absolute';
+                    this.value = '容器去absolute';
+                    this.absolute = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
