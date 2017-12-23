@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浮动元素倒数2个莫名垂直间距bug（超过3个浮动元素）</title>
+    <style>
+        div {
+            width: 100px;
+        }
+        p {
+            margin-right: 1px;
+        }
+        span {
+            float: left;
+            padding: 5px;
+            width: 120px;
+            border: 1px solid #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            <span>A</span>
+            <span>B</span>
+            <span>C</span>
+            <span>D</span>
+        </p>
+    </div>
+</body>
+
+</html>
