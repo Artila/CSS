@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>折翼的天使</title>
+    <style>
+        input[type=button] {
+            height: 32px;
+            font-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="http://img.mukewang.com/54447b06000171a002560191.jpg">
+    <img src="http://img.mukewang.com/54447f4a0001eb7d01910256.jpg">
+    <img src="http://img.mukewang.com/54447f550001ccb002560191.jpg">
+    <p>
+        <input type="button" id="button" value="点击第2张图片应用position:absolute变天使">
+    </p>
+    <script>
+        var btn = document.getElementById('button'),
+            img2 = document.getElementsByTagName('img')[1];
+
+        if (btn && img2) {
+            var init = btn.value;
+            btn.onclick = function() {
+                if (this.value == init) {
+                    img2.style.position = 'absolute';
+                    this.value = '撤销';
+                } else {
+                    img2.style.position = '';
+                    this.value = init;
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>
