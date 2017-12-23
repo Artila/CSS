@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>折翼天使表现特性一：去浮动</title>
+    <style>
+        input[type=button] {
+            height: 32px;
+            font-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="http://img.mukewang.com/54447b06000171a002560191.jpg">
+    <img src="http://img.mukewang.com/54447f4a0001eb7d01910256.jpg">
+    <img src="http://img.mukewang.com/54447f550001ccb002560191.jpg">
+    <p>
+        <input type="button" id="float" value="点击第2张图片应用float:left">
+    </p>
+    <p>
+        <input type="button" id="button" value="点击第2张图片应用position:absolute">
+    </p>
+    <p>
+        float造成环绕效果，absolute保持跟随效果，absolute存在时float效果失效。
+    </p>
+    <script>
+        var flo = document.getElementById('float'),
+            btn = document.getElementById('button'),
+            img2 = document.getElementsByTagName('img')[1];
+
+        if (flo && btn && img2) {
+            var init = btn.value;
+            btn.onclick = function() {
+                if (this.value == init) {
+                    img2.style.position = 'absolute';
+                    this.value = '撤销';
+                } else {
+                    img2.style.position = '';
+                    this.value = init;
+                }
+            };
+
+            flo.onclick = function() {
+                img2.style['cssFloat' in this.style ? 'cssFloat' : 'styleFloat'] = 'left';
+            }
+        }
+    </script>
+</body>
+
+</html>
