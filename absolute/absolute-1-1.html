@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>absolute的破坏性</title>
+    <style>
+        .box {
+            padding: 10px;
+            background: #f0f0f0;
+        }
+        input {
+            position: absolute;
+            top: 350px;
+            width: 150px;
+            height: 30px;
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        元素设置了absolute之后，会使其父元素的高度(height)塌陷，这种塌陷的原因是: 
+    </p>
+    <p>
+        设置absolute属性的元素，其脱离了文档流，即脱离了父元素，所以父元素没有了该元素，造成高度会塌陷。 
+    </p>
+    <p>
+        如果去掉父元素的padding：10px，效果更明显，一点高度就都没有了。
+    </p>
+    <div class="box">
+        <img id="image" src="http://img.mukewang.com/54447b06000171a002560191.jpg" 
+        width="250" height="200">
+    </div>
+    <input type="button" id="btn" value="图片absolute化">
+    <script>
+        var image = document.getElementById('image'),
+            btn = document.getElementById('btn');
+
+        if (image != null && btn != null) {
+            btn.onclick = function() {
+                console.log(this);
+                console.log(this.absolute);
+                if (this.absolute) {
+                    image.style.position = '';
+                    this.value = '图片absolute化';
+                    this.absolute = false;
+                } else {
+                    image.style.position = 'absolute';
+                    this.value = '图片去absolute';
+                    this.absolute = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
