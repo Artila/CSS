@@ -1,0 +1,108 @@
+body {
+    font-size: 14px;
+    background: #ddf3f7;
+    color: #333;
+}
+a {
+    color: #0082cb;
+    text-decoration: none;
+}
+p { 
+    margin: 0; 
+} 
+img { 
+    border: 0; 
+}
+/* 主要样式 */
+.box {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.box-x {
+    margin-bottom: 10px;
+    background: #fff;
+}
+/* 可以调整模块的大小 */
+.box-resize {
+    overflow: auto;
+    resize: both;
+}
+.box-list {
+    padding: 20px;
+    overflow: hidden;
+    _zoom: 1;
+}
+/* vip的小图标 */
+.box-vip {
+    display: inline-block;
+    margin-left: 1px;
+    width: 11px;
+    height: 10px;
+    background: url(data:image/gif;base64,R0lGODlhCwAKAJEDAPyZCveDBuJmBP///yH5BAEAAAMALAAAAAALAAoAAAIdhD1zopgTXgMpsBdylVCPK2UCKI0j95hoRa0NVwAAOw==);
+}
+
+/* fluid-01 */
+/* 头像 */
+.box-head-a {
+    float: left;
+    margin-right: 20px;
+}
+/* 内容 */
+.box-cell {
+    display: table-cell;
+    *display: inline-block;
+    width: 2000px;
+    *width: auto;
+}
+/* fluid-02 */
+/* 右浮动，改变DOM位置的流体布局 */
+.box-head-r {
+    float: right;
+    width: 56px;
+}
+/* 左浮动，不改变DOM位置的流体布局 */
+.box-full-float {
+    width: 100%;
+    float: left;
+}
+/* 避免占据头像部分 */
+.box-feed-part {
+    margin-right: 76px;
+}
+.box-head-l {
+    margin-left: -56px;
+    /* margin-right: 56px; 这种不行*/
+    float: left;
+    width: 56px;
+} 
+/* fluid-03 */
+.box-head-f {
+    float: left;
+    width: 56px;
+}
+/* 固定布局 */
+.box-feed-fixed {
+    float: right;
+    width: 484px;
+}
+/* 流体（自适应）布局 */
+.box-feed-flow {
+    margin-left: 76px;
+}
+/* 下面选择部分 */
+.box-sms {
+    padding-bottom: 6px;
+    line-height: 22px;
+    font-size: 14px;
+} 
+.box-select {
+    padding: 5px;
+    width: 80px;
+    font-size: 100%;
+}
+.box-btn { 
+    padding: 5px;
+    width: 70px;  
+    font-size: 100%; 
+}
