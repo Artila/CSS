@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>折翼天使表现特性二：位置跟随</title>
+    <style>
+        input[type=button] {
+            height: 32px;
+            font-size: 100%;
+        }
+
+        p {
+            margin-left: 260px;
+        }
+
+        img+p {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="http://img.mukewang.com/54447b06000171a002560191.jpg">
+    <!-- ie7 时加上一个父元素div -->
+    <img src="http://img.mukewang.com/54447f4a0001eb7d01910256.jpg">
+    
+    <img src="http://img.mukewang.com/54447f550001ccb002560191.jpg">
+    <p>
+        <input type="button" id="block" value="点击第2张图片应用display:block">
+    </p>
+    <p>
+        <input type="button" id="absolute" value="点击第2张图片应用position:absolute变天使">
+    </p>
+    <p>
+        元素是block，那么absolute之后依然是block排列，inline时absolute后依然inline排列.
+    </p>
+
+    <script>
+        var blo = document.getElementById('block'),
+            abs = document.getElementById('absolute'),
+            img2 = document.getElementsByTagName('img')[1];
+
+        if (blo && abs && img2) {
+            var absInit = abs.value;
+            abs.onclick = function() {
+                if (this.value == absInit) {
+                    img2.style.position = 'absolute';
+                    this.value = '撤销';
+                } else {
+                    img2.style.position = '';
+                    this.value = absInit;
+                }
+            };
+            var bloInit = blo.value;
+            blo.onclick = function() {
+                if (this.value == bloInit) {
+                    img2.style.display = 'block';
+                    this.value = '撤销';
+                } else {
+                    img2.style.display = '';
+                    this.value = bloInit;
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>
