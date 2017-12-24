@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>没有宽度和高度声明实现的全屏自适应效果</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #000;
+            opacity: .5;
+            filter: alpha(opacity=50);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+</body>
+
+</html>
