@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>不受overflow的影响</title>
+    <style>
+        body {
+            background: #bbb;
+        }
+
+        .scroll {
+            margin: 200px auto 0;
+            margin-top: calc(50vh - 150px);
+            width: 500px;
+            height: 300px;
+            background: #fff;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            overflow: auto;
+        }
+
+        .close {
+            position: absolute;
+            margin: -17px 0 0 483px;
+            width: 34px;
+            height: 34px;
+            background: url(http://img.mukewang.com/5444835b000100ce00340075.png) no-repeat;
+        }
+
+        .close:hover {
+            background-position: 0 -41px;
+        }
+
+        img {
+            margin: 10px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll">
+        <a href="javascript:" class="close" title="关闭"></a>
+        <img src="http://img.mukewang.com/54447b06000171a002560191.jpg">
+        <img src="http://img.mukewang.com/54447f550001ccb002560191.jpg">
+    </div>
+    <p>
+        超越overflow，仔细看你会发现，为什么关闭按钮（代码中即class为close的a）明明放在滚动的div中，其父元素设置了overflow为auto，但是滚动时候其他俩个div都滚动，但是这个关闭按钮却不滚动？那是因为绝对定位absolute并不是相对于其父元素定位的，而是相对于其【包含块】定位的，如果给其父元素position:relative另其形成【包含块】，内部的关闭按钮就也会滚动了，大家可以试一试。
+    </p>
+    <p>
+        这个demo中的关闭按钮不滚动，原因是absolute可以超于没有设置relative的overflow父级元素，因为并没有给overflow的div加上relative，因此关闭按钮的实际父亲是body, 因此这个所谓的overflow是关不住我们的天使的，只有body才能镇住它！！
+    </p>
+    <p>
+        1.在父元素没有position：relative 的情况下, 元素posiiton：absolute会超越overflow
+    </p>
+    <p>
+        2.父元素有position：relative以及overflow:hidden时，posiiton：absolute没用，超出div部分不显示
+    </p>
+</body>
+
+</html>
