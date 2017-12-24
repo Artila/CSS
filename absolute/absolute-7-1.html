@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无固定width/height容器内的绝对定位元素拉伸</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+
+        .container {
+            display: inline-block; /* 使容器具有包裹性 */
+            position: relative; /* 限制cover层的范围 */
+        }
+
+        .cover {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            opacity: .5;
+            filter: alpha(opacity=50);
+        }
+    </style>
+</head>
+
+<body>
+    <span class="container">
+        <!-- 图片的透明度为50%的遮罩层 -->
+        <i class="cover"></i>
+        <img src="http://img.mukewang.com/547c34cf000171a002560191.jpg" width="512" height="381">
+    </span>
+    <span class="container">
+        <i class="cover"></i>
+        <img src="http://img.mukewang.com/547c34c9000171a002560191.jpg" width="256" height="191">
+    </span>
+</body>
+
+</html>
