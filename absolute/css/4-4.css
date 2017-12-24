@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font: 14px/1.4 'Microsoft YaHei';
+    background: #edeff0;
+}
+a { 
+    color: #50B6E5; 
+}
+.constr {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    max-width: 80%;
+}
+.regist-head {
+    padding-left: 30px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    background: #be3948;
+    color: #fff;
+}
+.regist-body {
+    min-height: 480px;
+    padding: 100px 0;
+    background: #fff;
+}
+.regist-main {
+    margin-left: auto;
+    margin-right: auto;    
+    width: 600px;
+}
+.regist-group {
+    margin-top: 20px;
+    overflow: hidden;
+}
+.regist-label {
+    float: left;
+    padding-top: 10px;
+    width: 70px;
+}
+.regist-cell {
+    display: table-cell;
+    *display: inline-block;
+}
+.regist-input {
+    margin: 0 10px 0 0;
+    padding: 10px 5px;
+    width: 260px;
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid #d0d6d9;
+    vertical-align: top;
+}
+.regist-code-input {
+    width: 130px;
+}
+.regist-btn {
+    display: inline-block;
+    width: 160px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #39b94e;
+    color: #fff;
+}
+.regist-btn:hover {
+    background-color: #33a646;
+}
+/* 图标 */
+.regist-warn {
+    padding-left: 20px;
+    color: #be3948;
+}
+.icon-warn {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background: url(http://img.mukewang.com/5453084a00016ae300120012.gif) no-repeat center; 
+}
+.regist-warn > .icon-warn {
+    position: absolute;
+    margin-left: -20px;
+}
+.regist-star {
+    position: absolute;
+    margin-left: -1em;
+    font-family: simsun;
+    color: #f30;
+}
+.regist-remark {
+    position: absolute;
+    padding-top: 9px;
+    line-height: 21px;
+    color: #666;
+}

@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font: 14px/1.4 'Microsoft YaHei';
+    background: #edeff0;
+}
+.constr {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    max-width: 80%;
+}
+.course-content {
+    float: right;
+    position: relative;
+    width: 920px;
+    min-height: 1200px;
+    background: #fff;
+}
+/* 课程列表 */
+.course-list-x {
+    padding: 20px 10px;
+    overflow: hidden;
+}
+.course-list {
+    float: left;
+    margin: 5px 10px 15px;
+    width: 280px;
+    height: 240px;
+    border-radius: 0 0 1px 1px;
+    background-color: #F7FAF9; 
+    background-color: rgba(255,255,255,1); 
+    box-shadow: 0 1px 2px #c5c5c5; 
+    text-decoration: none; 
+}
+/* 课程列表 */
+/* 加载动画 */
+.course-loading-x {
+    margin-top: 20px;
+    height: 0;
+    text-align: center;
+    letter-spacing: -.25em;
+    overflow: hidden;
+}
+.course-loading {
+    position: absolute;
+    margin-left: -26px;
+}
+/* 加载动画 */
+/* 边缘图标 */
+.course-fixed-x {
+    height: 0;
+    text-align: right;
+    overflow: hidden;
+}
+.course-fixed {
+    position: fixed;
+    margin-left: 20px;
+    bottom: 100px;
+    display: inline;
+    /* 和跟随的文字同一行，不然会换行 */
+}
+.goto-top-diaocha, .goto-top-app, .goto-top-feed {
+    margin-top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url('../images/menu.png') no-repeat;
+}
+.goto-top-diaocha {
+    background-position: -48px 0;
+}
+.goto-top-diaocha:hover {
+    background-position: -48px -50px;  
+}
+.goto-top-app {
+    background-position: -96px 0;
+}
+.goto-top-app:hover {
+    background-position: -96px -50px;
+}
+.goto-top-feed {
+    background-position: -144px 0;
+}
+.goto-top-feed:hover {
+    background-position: -144px -50px;
+}
+/* 边缘图标 */

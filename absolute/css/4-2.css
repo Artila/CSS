@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font: 14px/1.4 'Microsoft YaHei';
+    background: #edeff0;
+}
+.constr {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 300px;
+    width: 1200px;
+    max-width: 80%;
+    overflow: hidden;
+}
+.course-sidebar {
+    float: left;
+    width: 262px;
+}
+.course-sidebar > div {
+    background-color: #fff;
+    border: 1px solid #e6e8e9;
+    box-shadow: 0px 1px 2px #d5d7d8;
+}
+.course-sidebar-type {
+    height: 200px;
+}
+.course-sidebar-search {
+    margin-top: 20px;
+    overflow: hidden;
+}
+.course-sidebar-search.focus {
+    border-color: #2ea7e0;
+}
+.course-search-input {
+    float: left;
+    margin: 0;
+    padding: 10px;
+    width: 200px;
+    line-height: 18px;
+    font-size: 12px;
+    font-family: inherit;
+    border: 0 none; 
+}
+.course-search-input:focus {
+    outline: 0 none;
+}
+.course-search-input::-ms-clear {
+    display: none;
+}
+.course-search-btn {
+    float: right;
+    width: 38px;
+    height: 38px;
+    background: url(http://img.mukewang.com/545305ba0001f3f600380076.png); 
+    text-indent: -9em;
+    overflow: hidden;
+}
+.focus .course-search-btn {
+    background-position: 0 -38px;
+}
+
+.course-sidebar-result {
+    display: none;
+    position: absolute;
+    margin: 39px 0 0 -1px;
+    padding-left: 0;
+    width: 260px;
+    font-size: 12px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px #d5d7d8;
+    border: 1px solid #e6e8e9;
+    list-style-type: none;
+}
+.course-sidebar-result > li {
+    padding-left: 12px;
+    line-height: 30px;
+}
+.course-sidebar-result > li:hover {
+    background-color: #f9f9f9;
+}
+.course-sidebar-result a {
+    display: block;
+    text-decoration: none;
+    color: #5e5e5e;
+}
+.course-sidebar-result a:hover {
+    color: #000;
+}
