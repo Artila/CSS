@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉框定位二三事</title>
+    <link rel="stylesheet" href="css/4-2.css">
+</head>
+
+<body>
+    <div class="constr">
+        <div class="course-sidebar">
+            <div class="course-sidebar-type"></div>
+            <div class="course-sidebar-search">
+                <ul id="result" class="course-sidebar-result">
+                    <li>
+                        <a href="http://www.imooc.com/view/121">分享：CSS深入理解之float浮动</a>
+                    </li>
+                    <li>
+                        <a href="http://www.imooc.com/view/118">案例：CSS圆角进化论</a>
+                    </li>
+                    <li>
+                        <a href="http://www.imooc.com/view/93">案例：CSS Sprite雪碧图应用</a>
+                    </li>
+                    <li>
+                        <a href="http://www.imooc.com/view/77">案例：CSS3 3D 特效</a>
+                    </li>
+                    <li>
+                        <a href="http://www.imooc.com/view/57">案例：如何用CSS进行网页布局</a>
+                    </li>
+                </ul>
+                <input class="course-search-input" placeholder="课程搜索">
+                <a href="javascript;" class="course-search-btn">搜索</a>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function() {
+        var input = document.getElementsByTagName('input')[0],
+            result = document.getElementById('result');
+            
+        if (input && result) {
+            input.onfocus = function() {
+                this.parentNode.className = 'course-sidebar-search focus';
+                if (this.value !== '') {
+                    result.style.display = 'block';
+                }
+            }
+            input.onblur = function() {
+                if (this.value === '') {
+                    this.parentNode.className = 'course-sidebar-search';
+                }
+                result.style.display = 'none';
+            }
+            
+            // IE7 给float元素加上一个div父元素避免bug
+            if (!document.querySelector) {
+                var div = document.createElement('div');
+                input.parentNode.insertBefore(div, input);
+                div.appendChild(result);
+            }
+            if ('oninput' in input) {
+                input.addEventListener('input', function() {
+                    if (this.value.trim() !== '') {
+                        result.style.display = 'block';
+                    } else {
+                        result.style.display = 'none';
+                    }
+                });
+            } else {
+                // I36-IE8
+                input.onpropertychange = function(event) {
+                    event = event || window.event;
+                    if (event.propertyName === 'value' && /focus/.test(this.parentNode.className)) {
+                        if (this.value.trim() !== '') {
+                            result.style.display = 'block';
+                        } else {
+                            result.style.display = 'none';
+                        }
+                    }
+                };
+            }
+        }
+    })();
+    </script>
+</body>
+
+</html>
