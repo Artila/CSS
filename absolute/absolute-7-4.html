@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>left/right拉伸和width同时存在</title>
+    <style>
+        .image {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 50%;
+        }
+
+        .button {
+            padding-top: 200px;
+        }
+
+        .button input {
+            width: 280px;
+            height: 40px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="image" src="http://img.mukewang.com/547c34c9000171a002560191.jpg" height="191">
+    <p class="button">
+        <input type="button" value="添加margin: auto;" onClick="document.getElementsByTagName('img')[0].style.margin = 'auto';">
+    </p>
+    <p>
+        对于position为absolute和fixed的元素，同时设置left、right和width，即可由margin:auto水平居中； 同理，top、bottom、height即可设置垂直居中。
+    </p>
+</body>
+
+</html>
