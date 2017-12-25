@@ -1,0 +1,171 @@
+html, body, .page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    user-select: none;
+    background-color: #ebebeb;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif; 
+}
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+h1,h2,h3,h4,h5,h6{ 
+    margin: 0; 
+    font-weight: 400; 
+}
+ul,ol{ 
+    margin: 0; 
+    list-style-type: none; 
+}
+
+/* page */
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header, .content, .footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+/* header */
+.header {
+    padding: 0 5px;
+    top: 0;
+    height: 48px;
+    background-color: #21292b;
+    color: #fff;
+    z-index: 1;
+}
+.header > h1 {
+    float: left;
+    margin: 0 0 0 10px;
+    line-height: 48px;
+    font-size: 18px;
+}
+.header > a {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-size: 48px 144px;
+    text-indent: -9em;
+    overflow: hidden;
+}
+.header > .icon-search, .header > .icon-add {
+    float: right;
+}
+/* header */
+/* footer */
+.footer {
+    height: 52px;
+    bottom: 0;
+    border-top: 1px solid #dfdfdf;
+    z-index: 1;
+}
+.footer > a{
+    float: left;
+    width: 25%;
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+}
+.footer > a > i {
+    margin-bottom: -3px;
+    display: block;
+    height: 35px;
+    background-size: 35px 280px;
+}
+.footer > .active {
+    color: #45c018;
+}
+/* footer */
+/* content */
+.content {
+    top: 48px;
+    bottom: 53px;
+    overflow: auto;
+}
+.wechat-list {
+    display: block;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    height: 64px;
+    background-color: #fff;
+    border-bottom: 1px solid #d7d7d7;
+}
+.wechat-list:last-child {
+    border-bottom: 0;
+}
+.wechat-list > img {
+    float: left;
+    width: 48px;
+    height: 48px;
+}
+.wechat-list > .cell {
+    padding-left: 58px;
+    line-height: 24px;
+    color: #333;
+}
+.wechat-h-time {
+    overflow: hidden;
+}
+.wechat-h-time > h5 {
+    float: left;
+    font-size: 100%;
+}
+.wechat-h-time > time {
+    float: right;
+    font-size: 12px;
+    color: #b9b9b9;
+}
+.wechat-h-time + p {
+    margin: 0 20px 0 0;
+    font-size: 14px;
+    color: #a8a8a8;
+    /* 超出的文字以...的形式代替 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+/* content */
+/* 图标 */
+.icon-search, .icon-back, .icon-add {
+    background: url(http://img.mukewang.com/547d339b000188bb00960288.png) no-repeat;
+}
+.icon-back {
+    background-position: 0 -96px;
+}
+.icon-add {
+    background-position: 0 -48px;
+}
+.icon-wechat, .icon-contacts, .icon-finds, .icon-mes {
+    background: url(http://img.mukewang.com/547d33970001444d00700560.png) no-repeat center top; 
+}
+.active .icon-wechat {
+    background-position: center -35px;
+}
+.icon-contacts {
+    background-position: center -70px;
+}
+.active .icon-contacts {
+    background-position: center -105px;
+}
+.icon-finds {
+    background-position: center -140px;
+}
+.active .icon-finds {
+    background-position: center -175px;
+}
+.icon-mes {
+    background-position: center -210px; 
+}
+.active .icon-mes {
+    background-position: center -245px;
+}
+
+/* 图标 */
