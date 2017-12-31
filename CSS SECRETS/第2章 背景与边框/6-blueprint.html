@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网格</title>
+    <style>
+        div {
+            width: 90%;
+            height: 20vh;
+            margin: 10px;
+        }
+        .first {
+            background: white;
+            background-image: 
+                linear-gradient(
+                    rgba(200, 0, 0, .5) 50%, transparent 0),
+                linear-gradient(90deg, 
+                    rgba(200, 0, 0, .5) 50%, transparent 0);
+            background-size: 30px 30px;
+        }
+        .second {
+            background: #58a;
+            background-image: 
+                linear-gradient(white 1px, transparent 0),
+                linear-gradient(90deg, 
+                    white 1px, transparent 0);
+            background-size: 30px 30px;
+        }
+        .third {
+            background: #58a;
+            background-image: 
+                linear-gradient(white 2px, transparent 0),
+                linear-gradient(90deg, 
+                    white 2px, transparent 0),
+                linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+                linear-gradient(90deg, 
+                    hsla(0, 0%, 100%, .3) 1px, transparent 0);
+            background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div>
+</body>
+</html>
