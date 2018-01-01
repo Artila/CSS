@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>棋盘</title>
+    <style>
+        div {
+            width: 90%;
+            height: 20vh;
+            margin: 10px;
+        }
+        .first {
+            background: #eee;
+            background-image: 
+                linear-gradient(45deg,#bbb 25%, transparent 0),
+                linear-gradient(45deg, transparent 75%, #bbb 0);
+            background-size: 30px 30px;
+        }
+        .second {
+            background: #eee;
+            background-image: 
+                linear-gradient(45deg,#bbb 25%, transparent 0),
+                linear-gradient(45deg, transparent 75%, #bbb 0);
+            background-position: 0 0, 15px 15px;
+            background-size: 30px 30px; 
+        }
+        .third {
+            background: #eee;
+            background-image: 
+                linear-gradient(45deg,#bbb 25%, transparent 0),
+                linear-gradient(45deg, transparent 75%, #bbb 0),
+                linear-gradient(45deg,#bbb 25%, transparent 0),
+                linear-gradient(45deg, transparent 75%, #bbb 0);
+            background-position: 
+                0 0, 15px 15px,
+                15px 15px, 30px 30px;
+            background-size: 30px 30px;             
+        }
+        .fourth {
+            background: #eee;
+            background-image: 
+                linear-gradient(45deg, 
+                    rgba(74, 211, 20, 0.25) 25%, 
+                    transparent 0, transparent 75%,
+                    rgba(30, 85, 206, 0.25) 0),
+                    linear-gradient(45deg, 
+                    rgba(211, 20, 20, 0.25) 25%, 
+                    transparent 0, transparent 75%,
+                    rgba(0, 0, 0, .25) 0);
+            background-position: 0 0, 15px 15px;
+            background-size: 30px 30px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third"></div> 
+    <div class="fourth"></div>   
+</body>
+</html>
