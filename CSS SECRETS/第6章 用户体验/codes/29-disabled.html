@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>禁用状态按钮的提示</title>
+    <style>
+        :disabled, [disabled], [aria-disabled = 'true'] {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <button>Button</button>
+    <button disabled>Disabled button</button>
+</body>
+</html>
