@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>脚注边框</title>
+    <style>
+        .footnote {
+            padding-top: .5em;
+            font: 220%/1.4 Baskerville, Palatino, serif;
+            /* 垂直条纹的高度由边框的粗细决定 */
+            border-top: .15em solid transparent;
+            /* 由渐变生成的垂直条纹，裁切的宽度就是黑色条纹占据的部分 */
+            border-image: 
+                linear-gradient(90deg,
+                    currentColor 4em, transparent 0)
+                100% 0 0;
+                /* em 根据 font-size 的变化而调整，currentColor 根据 color 属性的变化而自动适应（边框和文字的颜色相同） */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- sup 上标，sub 下标 -->
+    <div class="footnote">
+        <sup>1</sup>
+        This is a footnote.
+    </div>
+</body>
+
+</html>
