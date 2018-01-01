@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>连续的图像边框</title>
+    <style>
+        div {
+            max-width: 31em;
+            margin: 10px;
+            font: 100%/1.6 Baskerville, Palatino, serif;
+        }
+        .first {
+            padding: 1em;
+            border: 1em solid transparent;
+            background: 
+                linear-gradient(white, white), 
+                url(./stone-art.jpg);
+            background-size: cover;
+            background-clip: padding-box, border-box;
+        }
+        .second {
+            padding: 1em;
+            border: 1em solid transparent;
+            background: 
+                linear-gradient(white, white), 
+                url(./stone-art.jpg);
+            background-size: cover;
+            background-clip: padding-box, border-box;
+            background-origin: border-box;
+        }
+        .third {
+            padding: 1em;
+            border: 1em solid transparent;
+            background: 
+                linear-gradient(white, white) padding-box,
+                url(./stone-art.jpg) border-box 0 / cover;
+            overflow: hidden;
+            resize: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">
+        Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef
+        ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. 
+    </div>
+    <div class="second">
+        Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef
+        ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. 
+    </div>   
+    <div class="third">
+        Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef
+        ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. 
+    </div>      
+</body>
+
+</html>
